@@ -6,6 +6,8 @@ RUN curl -sL "https://deb.nodesource.com/setup_${NODE_VERSION}" | bash - \
  && apt-get install --no-install-recommends -y \
       nodejs
 
+RUN apt-get install unixodbc unixodbc-dev 
+
 COPY tools/install-mssql.sh /doccano/tools/install-mssql.sh
 RUN /doccano/tools/install-mssql.sh --dev
 
